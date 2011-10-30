@@ -1,0 +1,20 @@
+<html>
+<head>
+
+<script type="text/javascript">
+	opera.extension.onconnect = function(event) {
+		var prefs = new Array;
+		
+		prefs[0] = widget.preferences.alternative;
+		prefs[1] = widget.preferences.auto_hide;
+		prefs[2] = widget.preferences.size;
+		prefs[3] = widget.preferences.color;
+		prefs[4] = widget.preferences.only_over;
+		prefs[5] = widget.preferences.b_color;
+
+		event.source.postMessage(prefs);
+	}
+</script>
+
+</head>
+</html>
