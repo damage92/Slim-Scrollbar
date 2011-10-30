@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          SlimScrollbar DEV
+// @name          SlimScrollbar
 // @description	  Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars.
 // @author        Damage92
 // @homepage      http://stylecode.altervista.org
@@ -106,12 +106,14 @@ function Cover() {
 
 		document.onmousedown = false_func;
 
-		document.body.appendChild(this.cov);
+//		document.body.appendChild(this.cov);
+		document.documentElement.appendChild(this.cov);
 	}
 
 	this.remove = function() {
 		this.ins = false;
-		document.body.removeChild(this.cov);
+//		document.body.removeChild(this.cov);
+		document.documentElement.removeChild(this.cov);
 		
 		//restore original function
 		if (this.orig_func != undefined)
@@ -164,7 +166,8 @@ function Screen() {
 	
 	this.screen_size = document.createElement("div");
 	this.screen_size.style="position:absolute;width:0px;height:0px;left:0px;top:0px;visibility:hidden;z-index:0";
-	document.body.appendChild(this.screen_size);
+//	document.body.appendChild(this.screen_size);
+	document.documentElement.appendChild(this.screen_size);
 	
 	this.ref_width();
 	this.ref_height();
@@ -441,12 +444,15 @@ function V_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-	document.body.appendChild(this.bar);
+//	document.body.appendChild(this.bar);
+	document.documentElement.appendChild(this.bar);
+
 	//create udr object
 	this.udr = document.createElement("div");
-	this.udr.style="opacity:0;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute;"; //background:green
+	this.udr.style="opacity:0;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute;";//background:green";
 	this.udr.style.zIndex = max_zindex - 1;
-	document.body.appendChild(this.udr);
+//	document.body.appendChild(this.udr);
+	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
@@ -726,12 +732,14 @@ function H_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-	document.body.appendChild(this.bar);
+//	document.body.appendChild(this.bar);
+	document.documentElement.appendChild(this.bar);
 
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:0;visibility:visible;height:15px;width:0px;left:0px;top:0px;position:absolute;";
 	this.udr.style.zIndex = max_zindex - 1;
-	document.body.appendChild(this.udr);
+//	document.body.appendChild(this.udr);
+	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
@@ -791,7 +799,7 @@ function on_scroll() {
 }
 
 function edge(e) {
-	if (e.pageX > over_limit) vbar.over_bar();
+	if (e.clientX > over_limit) vbar.over_bar();
 }
 
 function init() {
