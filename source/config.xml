@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.8-6">
-	<name>Slim Scrollbar</name>
+	<name xml:lang="en">Slim Scrollbar</name>
+	<name xml:lang="nb">Tynne rullefelt</name>
 	<author href="http://stylecode.altervista.org">Damage92</author>
 	<icon src="icon.png"/>
 	<description xml:lang="en">A scrollbar with auto-hide</description>
 	<description xml:lang="it">Una barra di scorrimento che si nasconde automaticamente</description>
-
+	<description xml:lang="nb">Rullefelt som skjules automatisk</description>
 	<preference name="alternative" value="false" />
 	<preference name="auto_hide" value="true" />
 	<preference name="size" value="5" />
 	<preference name="color" value="#000" />
 	<preference name="b_color" value="#ffffff" />
 	<preference name="only_over" value="false" />
-
 </widget>
