@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.8-build5">
+<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.8-6">
 	<name>Slim Scrollbar</name>
 	<author href="http://stylecode.altervista.org">Damage92</author>
 	<icon src="icon.png"/>

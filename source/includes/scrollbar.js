@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          SlimScrollbar
-// @description	  developer version
+// @description	  Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars.
 // @author        Damage92
 // @homepage      http://stylecode.altervista.org
 // @exclude http://acid3.acidtests.org/
@@ -13,7 +13,6 @@ this.margin = margine del limite dello scorrimento
 
 bugs to solve:
 whell scrolling on Windows
-http://serienjunkies.org/?cat=0
 
 */
 

@@ -1,0 +1,36 @@
+20/12/2010 - version 0.6
+- first version
+
+04/01/2011 - version 0.7
+ - added zoom support
+ - added horizontal bar
+ - added alternative bar option (for performance issue)
+Update 0.7-1
+- fix ctrl+alt+mouse (or "Scroll is Pan" pref) issue
+Update 0.7-2
+ - fix minimum bar size
+ - now bars appears on page load
+ - add "auto hide" option
+Update 0.7-3
+ - fixed white space under images
+ - minor bugfix
+
+08/04/2011 - version 0.8-1
+ - added scroll functionality
+ - added "click to scroll" function
+ - improved compatibility with some extensions
+ - added apparence preferences (color and size)
+ - minor bugfix
+ - added italian translation
+Update 0.8-2
+ - fixed casual deactivation bug
+ - code improved
+ - fixed incompatibility on acid3.acidtests.org
+Update 0.8-3
+ - fixed image view incompatibility
+ - fixed size option bug
+ - added "view only on mouse-over" option
+ - added "border color" option
+ - fixed mouse aiming on right edge bug
+Update 0.8-4
+ - fixed "View bar only when mouse is over it" bug

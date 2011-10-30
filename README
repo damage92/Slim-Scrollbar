@@ -1,3 +1,14 @@
+DESCRIPTION:
+
 Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for netbooks.
 
-I'M WRITING DOCUMENTATION... wait a time
+
+I'M WRITING FULL DOCUMENTATION... wait a time!
+
+HOW TO DEVELOP:
+
+Linux/*nix:
+Modify code, then exec make.sh. Now slimscrollbar.oex is ready to install.
+
+Other:
+Modify code, then zip source content and name the zip file "slimscrollbar.oex" (remove the old one). Now slimscrollbar.oex is ready to install.
