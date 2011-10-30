@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          SlimScrollbar
+// @name          SlimScrollbar DEV
 // @description	  Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars.
 // @author        Damage92
 // @homepage      http://stylecode.altervista.org
@@ -369,9 +369,9 @@ function V_bar() {
 				cover.ref_cover_size();
 
 				vbar.ref_rapp();
-				vbar.ref_left();
-				vbar.ref_height();
-				vbar.ref_top();
+//				vbar.ref_left();
+//				vbar.ref_height();
+//				vbar.ref_top();
 
 				hbar.ref_rapp();
 				hbar.ref_top();
@@ -664,9 +664,9 @@ function H_bar() {
 				vbar.ref_top();
 
 				hbar.ref_rapp();
-				hbar.ref_top();
-				hbar.ref_width();
-				hbar.ref_left();
+//				hbar.ref_top();
+//				hbar.ref_width();
+//				hbar.ref_left();
 			}
 			this.rapp_change();
 		}
@@ -803,10 +803,10 @@ function init() {
 	hbar = new H_bar();
 
 	vbar.check_rapp();
-	vbar.ref_left();
+//	vbar.ref_left();
 
 	hbar.check_rapp();
-	hbar.ref_top();
+//	hbar.ref_top();
 
 	window.addEventListener('resize', on_resize, false);
 	window.addEventListener('scroll', on_scroll, false);
