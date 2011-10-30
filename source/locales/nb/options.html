@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nb">
+	<head><title>Valg for Tynne rullefelt</title></head>
+<body>
+
+<div style="margin-left:auto; margin-right:auto; width:700px; font-family:arial; background:#F2F2F2; padding: 1px 10px 8px 10px; border-top: solid 2px grey; border-bottom: solid 2px grey">
+
+	<p style="font-size:20px; text-align:center; color:#700">
+		Slim Scrollbar <span style="font-size:13px">version 0.8-6</span><br>
+		<a href="http://stylecode.altervista.org" style="font-size:15px">by Damage92</a>
+	</p>
+	<p style="line-height:25px">
+	<b>For å slå av standardrullefeltene gå inn i Instillinger (ctrl+F12) Avansert > Nettleser, og velg bort "Vis rullefelt".</b><br>
+	<br>
+	<span style="text-shadow: 1px 1px 3px #777;">Generelle instillinger:</span><br>
+	<input type="checkbox" id="alt" onClick="change_pref(this)"> Korriger treg rulling</input><i> - bruk dette valget om du opplever treg rulling</i>
+	<a style="float:right" href="javascript:set_default('alt')">[tilbakestill til forvalgt verdi]</a><br>
+	<input type="checkbox" id="hide" onClick="change_pref(this)"> Skjul automatisk<i> - skjul rullefeltene etter noen sekunder</i>
+	<a style="float:right" href="javascript:set_default('hide')">[tilbakestill til forvalgt verdi]</a><br>
+	<input type="checkbox" id="only_over" onClick="change_pref(this)"> Kun vis rullefeltet når musepekeren er over sjakten</i>
+	<a style="float:right" href="javascript:set_default('only_over')">[tilbakestill til forvalgt verdi]</a><br>
+	<br>
+	<span style="text-shadow: 1px 1px 3px #777;">Rullefelt utseende:</span><br>
+	&nbsp;Feltstørrelse:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="size" min="3" max="10" value="5" style="width:60px" onChange="change_pref(this)"><i> - (minst 3, max 10)</i> 
+	<a style="float:right" href="javascript:set_default('size')">[tilbakestill til forvalgt verdi]</a><br>
+	&nbsp;Feltfarge:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" id="color" value="#000" onChange="change_pref(this)" style="width:60px"><i> - fargen på feltet</i> 
+	<a style="float:right" href="javascript:set_default('color')">[tilbakestill til forvalgt verdi]</a><br>
+	&nbsp;Rammefarge:&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" id="b_color" value="#fff" onChange="change_pref(this)" style="width:60px"><i> - fargen på feltets ramme</i> 
+	<a style="float:right" href="javascript:set_default('b_color')">[tilbakestill til forvalgt verdi]</a><br>
+	<br>
+	<br>
+	<span id="alert">Last inn sider på nytt for ta i bruk endringene!</span>
+	</p>
+</div>
+
+<script type="text/javascript"> // imposta i valori correnti
+
+alt_cb = document.getElementById("alt");
+widget.preferences.alternative == "true" ? alt_cb.checked = true : alt_cb.checked = false;
+
+hide_cb = document.getElementById("hide");
+widget.preferences.auto_hide == "true" ? hide_cb.checked = true : hide_cb.checked = false;
+
+size_nb = document.getElementById("size");
+size_nb.value = widget.preferences.size;
+
+color_cl = document.getElementById("color");
+color_cl.value = widget.preferences.color;
+
+only_over_cb = document.getElementById("only_over");
+widget.preferences.only_over == "true" ? only_over_cb.checked = true : only_over_cb.checked = false;
+if (widget.preferences.auto_hide == "false") only_over_cb.disabled = true;
+
+
+function change_pref(input) {
+
+	switch (input.id) { 
+		case "alt":
+		widget.preferences.alternative = input.checked;
+		break; 
+
+		case "hide": 
+			widget.preferences.auto_hide = input.checked;
+			//'only_over' depends on 'hide'
+			only_over_cb = document.getElementById('only_over');
+			input.checked == true ? only_over_cb.disabled = false : only_over_cb.disabled = true;
+		break; 
+
+		case "size":
+			if (parseInt(input.value) > parseInt(input.max)) input.value = input.max;
+			if (parseInt(input.value) < parseInt(input.min)) input.value = input.min;
+			widget.preferences.size = input.value;
+		break;
+
+		case "color":
+		widget.preferences.color = input.value;
+		break;
+
+	}
+
+	document.getElementById("alert").style.color="red";
+
+}
+
+function set_default(target) {
+
+	switch (target) { 
+		case "alt":
+		document.getElementById(target).checked = false;
+		widget.preferences.alternative = "false";
+		break; 
+
+		case "hide": 
+		document.getElementById(target).checked = true;
+		widget.preferences.auto_hide = "true";
+		break; 
+
+		case "size":
+		document.getElementById(target).value = 5;
+		widget.preferences.size = 5;
+		break;
+
+		case "color":
+		document.getElementById(target).value = "#000";
+		widget.preferences.color = "#000";
+		break;
+
+		case "only_over":
+		document.getElementById(target).checked = false;
+		widget.preferences.only_over = "false";
+		break;
+
+	}
+
+	document.getElementById("alert").style.color="red";
+
+}
+
+</script>
+
+</body>
+</html>
