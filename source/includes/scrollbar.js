@@ -17,6 +17,9 @@ whell scrolling on Windows
 */
 
 
+(function() {
+
+
 function get_value(par) {return parseInt(par.split("px")[0])}
 
 if (window.top == window) {
@@ -831,3 +834,5 @@ function on_resize(event) {
 	if (hbar.down == true) hbar.up_bar();
 
 }
+
+}());
