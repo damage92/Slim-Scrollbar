@@ -156,7 +156,7 @@ function Screen() {
 		this.screen_size.style.width = "100%";
 		res = this.screen_size.offsetWidth;
 		this.screen_size.style.width = "0px";
-		
+			
 		this.width = res;
 		//return res;
 	}
@@ -444,15 +444,15 @@ function V_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-//	document.body.appendChild(this.bar);
-	document.documentElement.appendChild(this.bar);
+	document.body.appendChild(this.bar);
+//	document.documentElement.appendChild(this.bar);
 
 	//create udr object
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:0;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute;";//background:green";
 	this.udr.style.zIndex = max_zindex - 1;
-//	document.body.appendChild(this.udr);
-	document.documentElement.appendChild(this.udr);
+	document.body.appendChild(this.udr);
+//	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
@@ -648,6 +648,7 @@ function H_bar() {
 	}
 
 	this.ref_rapp = function() {
+	
 		this.old_rapp = this.norm_rapp;	
 		this.norm_rapp = (screen.get_width() - (this.bar_margin * 2)) / page.get_width();
 		this.rapp = this.norm_rapp;
@@ -732,14 +733,14 @@ function H_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-//	document.body.appendChild(this.bar);
-	document.documentElement.appendChild(this.bar);
+	document.body.appendChild(this.bar);
+//	document.documentElement.appendChild(this.bar);
 
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:0;visibility:visible;height:15px;width:0px;left:0px;top:0px;position:absolute;";
 	this.udr.style.zIndex = max_zindex - 1;
-//	document.body.appendChild(this.udr);
-	document.documentElement.appendChild(this.udr);
+	document.body.appendChild(this.udr);
+//	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
