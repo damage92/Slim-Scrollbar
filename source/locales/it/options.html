@@ -32,7 +32,7 @@
 	<a style="float:right" href="javascript:set_default('b_color')">[valore predefinito]</a><br>
 	<br>
 	<br>
-	<span id="alert">Ricarica le pagine web per applicare i cambiamenti!</span>
+<!--	<span id="alert">Ricarica le pagine web per applicare i cambiamenti!</span> -->
 	</p>
 </div>
 
@@ -94,7 +94,8 @@ function change_pref(input) {
 
 	}
 
-	document.getElementById("alert").style.color="red";
+//	document.getElementById("alert").style.color="red";
+	widget.preferences.changed = true;
 
 }
 
@@ -133,7 +134,8 @@ function set_default(target) {
 
 	}
 
-	document.getElementById("alert").style.color="red";
+//	document.getElementById("alert").style.color="red";
+	widget.preferences.changed = true;
 
 }
 

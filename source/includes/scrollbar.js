@@ -14,6 +14,10 @@ this.margin = margine del limite dello scorrimento
 bugs to solve:
 whell scrolling on Windows
 
+append bugs:
+documentElement -> ing.uniroma2.it
+body -> 24ways.org
+
 */
 
 
@@ -32,6 +36,7 @@ window.opera.addEventListener('BeforeEventListener.mouseup', prevent_event, fals
 	var prefs = new Prefs();
 	var side_margin = 3;
 	var max_zindex = 6000000;
+	var vbar, hbar;
 
 	opera.extension.addEventListener('message', get_msg, false);
 
@@ -65,6 +70,9 @@ function get_msg(event) { //called from the message event handler
 	if (prefs.msg[4]) prefs.only_over = prefs.msg[4];
 	if (prefs.msg[5]) prefs.b_color = prefs.msg[5];
 
+	if (vbar != null) vbar.update_prefs();
+//	if (hbar != null) hbar.update_prefs();
+
 }
 
 
@@ -80,7 +88,7 @@ function false_func() { return false; }
 
 function Cover() {
 	this.cov = document.createElement("div");
-	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px";
+	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px;";
 	this.cov.style.zIndex = max_zindex - 2;
 	this.ins = false;
 	this.orig_func;
@@ -106,14 +114,14 @@ function Cover() {
 
 		document.onmousedown = false_func;
 
-//		document.body.appendChild(this.cov);
-		document.documentElement.appendChild(this.cov);
+		document.body.appendChild(this.cov);
+//		document.documentElement.appendChild(this.cov);
 	}
 
 	this.remove = function() {
 		this.ins = false;
-//		document.body.removeChild(this.cov);
-		document.documentElement.removeChild(this.cov);
+		document.body.removeChild(this.cov);
+//		document.documentElement.removeChild(this.cov);
 		
 		//restore original function
 		if (this.orig_func != undefined)
@@ -130,44 +138,50 @@ function Page() {
 
 	this.get_height = function () {
 		return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, 
-		document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+		document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);	
 	}
 
 	this.get_width = function () {
-
 		return Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth,
 		document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
-
 	}
 }
-
+/*
 function Screen() {
 
 	this.ref_height = function () {
+	
+		this.height = window.innerHeight; //rispostare
+	
 		this.screen_size.style.height = "100%";
-		res = this.screen_size.offsetHeight;
-		this.screen_size.style.height = "0px";
+//		this.height = this.screen_size.offsetHeight;
+
+		if (this.height != this.screen_size.offsetHeight) alert("WRONG HEIGHT");
 		
-		this.height = res;
-		//return res;
+		console.log("default: " + this.height + " better: " + this.screen_size.offsetHeight);
+
+		this.screen_size.style.height = "0px";		
+		
 	}
 
 	this.ref_width = function () {
 		this.screen_size.style.width = "100%";
-		res = this.screen_size.offsetWidth;
+//		this.width = this.screen_size.offsetWidth;
+		this.width = window.innerWidth;
+
+		if (this.width != this.screen_size.offsetWidth) alert("WRONG WIDTH");
+		
 		this.screen_size.style.width = "0px";
-			
-		this.width = res;
-		//return res;
 	}
+
 
 	this.get_height = function() {return this.height;}
 	this.get_width = function() {return this.width;}
-	
+
 	this.screen_size = document.createElement("div");
-	this.screen_size.style="position:absolute;width:0px;height:0px;left:0px;top:0px;visibility:hidden;z-index:0";
+	this.screen_size.style="position:absolute;width:0px;height:0px;left:0px;top:0px;visibility:hidden;z-index:0;";
 //	document.body.appendChild(this.screen_size);
-	document.documentElement.appendChild(this.screen_size);
+//	document.documentElement.appendChild(this.screen_size);
 	
 	this.ref_width();
 	this.ref_height();
@@ -175,7 +189,7 @@ function Screen() {
 	this.height = this.get_height();
 
 }
-
+*/
 
 function V_bar() {
 	
@@ -200,6 +214,21 @@ function V_bar() {
 		this.bar.style.borderWidth="1px"; //border isn't included in div size!
 		this.bar.style.borderColor = prefs.b_color;
 		this.bar.style.backgroundColor = prefs.color;
+	}
+
+	this.update_prefs = function() {
+		this.bar.style.borderColor = prefs.b_color;
+		this.bar.style.backgroundColor = prefs.color;		
+		prefs.alt == "true" ? this.with_alt() : this.without_alt();
+		prefs.hide == "false" ? this.show() : this.try_hide();
+
+		//bar width
+		this.bar_width = prefs.size;
+		this.bar_width_over = this.bar_width * 2;
+		this.bar.style.width = this.bar_width + "px";
+		this.udr.style.width = this.bar_width_over - side_margin + "px";
+		this.over == true ? this.set_over_aspect() : this.set_out_aspect();
+		this.ref_left();
 	}
 
 	this.all_to_zero = function () {
@@ -256,9 +285,9 @@ function V_bar() {
 
 		prefs.alt == "true" ? this.udr_click_offset = event.pageY : this.udr_click_offset = event.clientY;
 		if (this.udr_click_offset > get_value(this.bar.style.top))
-			window.scrollBy(0, screen.get_height() - 20);
+			window.scrollBy(0, window.innerHeight - 20);
 		else
-			window.scrollBy(0, -screen.get_height() + 20);
+			window.scrollBy(0, -window.innerHeight + 20);
 
 	}
 
@@ -287,10 +316,10 @@ function V_bar() {
 	this.ref_scroll_par = function(event) {
 
 		if (prefs.alt == "true") this.scroll_max_top = page.get_height() - this.bar_margin - get_value(this.bar.style.height);
-		else this.scroll_max_top = screen.get_height() - this.bar_margin - get_value(this.bar.style.height);
+		else this.scroll_max_top = window.innerHeight - this.bar_margin - get_value(this.bar.style.height);
 
-		this.scroll_rapp = (page.get_height() - screen.get_height()) / 
-			(screen.get_height() - (this.bar_margin * 2) - get_value(this.bar.style.height));
+		this.scroll_rapp = (page.get_height() - window.innerHeight) / 
+			(window.innerHeight - (this.bar_margin * 2) - get_value(this.bar.style.height));
 	}
 
 	this.hdl_down_bar = function(event) {vbar.down_bar(event)}
@@ -357,9 +386,9 @@ function V_bar() {
 	this.ref_rapp = function() {
 
 		this.old_rapp = this.norm_rapp;
-		this.norm_rapp = (screen.get_height() - (this.bar_margin * 2)) / page.get_height();
+		this.norm_rapp = (window.innerHeight - (this.bar_margin * 2)) / page.get_height();
 		this.rapp = this.norm_rapp;
-		this.diff = screen.get_height() / page.get_height();
+		this.diff = window.innerHeight / page.get_height();
 
 	}
 
@@ -402,13 +431,13 @@ function V_bar() {
 	}
 
 	this.ref_left_abs = function() {
-		this.bar.style.left = screen.get_width() + window.scrollX - get_value(this.bar.style.width) - side_margin + this.side_margin_corr + "px";
-		this.udr.style.left = screen.get_width() + window.scrollX - this.bar_width_over + "px";
+		this.bar.style.left = window.innerWidth + window.scrollX - get_value(this.bar.style.width) - side_margin + this.side_margin_corr + "px";
+		this.udr.style.left = window.innerWidth + window.scrollX - this.bar_width_over + "px";
 			//+1 because on mouseover bar is moved to the window border for 1 pixel
 	}
 	this.ref_left_fix = function() {
-		this.bar.style.left = screen.get_width() - get_value(this.bar.style.width) - side_margin + this.side_margin_corr + "px";
-		this.udr.style.left = screen.get_width() + window.scrollX - this.bar_width_over + "px";
+		this.bar.style.left = window.innerWidth - get_value(this.bar.style.width) - side_margin + this.side_margin_corr + "px";
+		this.udr.style.left = window.innerWidth + window.scrollX - this.bar_width_over + "px";
 			//+1 because on mouseover bar is moved to the window border for 1 pixel
 	}
 
@@ -429,10 +458,10 @@ function V_bar() {
 			this.udr.style.visibility = "visible";
 		}
 
-		this.height = screen.get_height() * this.rapp;
+		this.height = window.innerHeight * this.rapp;
 
 		if (this.height < this.min_size) {
-			this.rapp = (screen.get_height() - (this.bar_margin * 2) - this.min_size) / (page.get_height() - screen.get_height());
+			this.rapp = (window.innerHeight - (this.bar_margin * 2) - this.min_size) / (page.get_height() - window.innerHeight);
 			this.bar.style.height = this.min_size + "px";
 		} else
 			this.bar.style.height = this.height + "px";
@@ -449,23 +478,27 @@ function V_bar() {
 
 	//create udr object
 	this.udr = document.createElement("div");
-	this.udr.style="opacity:0;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute;";//background:green";
+	this.udr.style="opacity:1;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute";//background:green";
 	this.udr.style.zIndex = max_zindex - 1;
 	document.body.appendChild(this.udr);
 //	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
-	//alternative bar
-	if (prefs.alt == "true") {
+	this.with_alt = function() {
 		this.ref_top = this.ref_top_abs;
 		this.ref_left = this.ref_left_abs;
 		this.bar.style.position = "absolute";
-	} else {
+	}
+	
+	this.without_alt = function() {
 		this.ref_top = this.ref_top_fix;
 		this.ref_left = this.ref_left_fix;
 		this.bar.style.position = "fixed";
 	}
+
+	//alternative bar
+	prefs.alt == "true" ? this.with_alt() : this.without_alt();
 
 	//events
 	this.bar.addEventListener('mouseover', function(){vbar.over_bar()}, false);
@@ -481,7 +514,6 @@ function V_bar() {
 function H_bar() {
 	
 	this.bar_height = prefs.size;
-//	this.bar_height_over = 10;
 	this.bar_height_over = this.bar_height * 2;
 	this.bar_margin = 8;
 	this.bar_opacity = 0.7;
@@ -555,9 +587,9 @@ function H_bar() {
 
 		prefs.alt == "true" ? this.udr_click_offset = event.pageX : this.udr_click_offset = event.clientX;
 		if (this.udr_click_offset > get_value(this.bar.style.left))
-			window.scrollBy(screen.get_width() - 20, 0);
+			window.scrollBy(window.innerWidth - 20, 0);
 		else
-			window.scrollBy(-screen.get_width() + 20, 0);
+			window.scrollBy(-window.innerWidth + 20, 0);
 
 	}
 
@@ -579,10 +611,10 @@ function H_bar() {
 	this.ref_scroll_par = function(event) {
 
 		if (prefs.alt == "true") this.scroll_max_left = page.get_width() - this.bar_margin - get_value(this.bar.style.width);
-		else this.scroll_max_left = screen.get_width() - this.bar_margin - get_value(this.bar.style.width);
+		else this.scroll_max_left = window.innerWidth - this.bar_margin - get_value(this.bar.style.width);
 
-		this.scroll_rapp = (page.get_width() - screen.get_width()) / 
-			(screen.get_width() - (this.bar_margin * 2) - get_value(this.bar.style.width));
+		this.scroll_rapp = (page.get_width() - window.innerWidth) / 
+			(window.innerWidth - (this.bar_margin * 2) - get_value(this.bar.style.width));
 	}
 
 	this.hdl_down_bar = function(event) {hbar.down_bar(event)}
@@ -650,9 +682,9 @@ function H_bar() {
 	this.ref_rapp = function() {
 	
 		this.old_rapp = this.norm_rapp;	
-		this.norm_rapp = (screen.get_width() - (this.bar_margin * 2)) / page.get_width();
+		this.norm_rapp = (window.innerWidth - (this.bar_margin * 2)) / page.get_width();
 		this.rapp = this.norm_rapp;
-		this.diff = screen.get_width() / page.get_width();
+		this.diff = window.innerWidth / page.get_width();
 	}
 
 	this.check_rapp = function() {
@@ -700,12 +732,12 @@ function H_bar() {
 	}
 
 	this.ref_top_abs = function() {
-		this.bar.style.top = screen.get_height() + window.scrollY - get_value(this.bar.style.height) - side_margin + "px";
-		this.udr.style.top = screen.get_height() + window.scrollY - this.bar_height_over - side_margin + "px";
+		this.bar.style.top = window.innerHeight + window.scrollY - get_value(this.bar.style.height) - side_margin + "px";
+		this.udr.style.top = window.innerHeight + window.scrollY - this.bar_height_over - side_margin + "px";
 	}
 	this.ref_top_fix = function() {
-		this.bar.style.top = screen.get_height() - get_value(this.bar.style.height) - side_margin + "px";
-		this.udr.style.top = screen.get_height() + window.scrollY - this.bar_height_over - side_margin + "px";
+		this.bar.style.top = window.innerHeight - get_value(this.bar.style.height) - side_margin + "px";
+		this.udr.style.top = window.innerHeight + window.scrollY - this.bar_height_over - side_margin + "px";
 	}
 
 	this.ref_width = function() {
@@ -719,10 +751,10 @@ function H_bar() {
 		}
 
 
-		this.width = screen.get_width() * this.rapp;
+		this.width = window.innerWidth * this.rapp;
 
 		if (this.width < this.min_size) {
-			this.rapp = (screen.get_width() - (this.bar_margin * 2) - this.min_size) / (page.get_width() - screen.get_width());
+			this.rapp = (window.innerWidth - (this.bar_margin * 2) - this.min_size) / (page.get_width() - window.innerWidth);
 			this.bar.style.width = this.min_size + "px";
 		} else
 			this.bar.style.width = this.width + "px";
@@ -731,13 +763,13 @@ function H_bar() {
 	}
 
 	this.bar = document.createElement("div");
-	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute;visibility:visible";
+	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute !important;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
 	document.body.appendChild(this.bar);
 //	document.documentElement.appendChild(this.bar);
 
 	this.udr = document.createElement("div");
-	this.udr.style="opacity:0;visibility:visible;height:15px;width:0px;left:0px;top:0px;position:absolute;";
+	this.udr.style="opacity:0;visibility:visible+;height:15px;width:0px;left:0px;top:0px;position:absolute";
 	this.udr.style.zIndex = max_zindex - 1;
 	document.body.appendChild(this.udr);
 //	document.documentElement.appendChild(this.udr);
@@ -806,19 +838,16 @@ function edge(e) {
 function init() {
 
 	page = new Page();
-	screen = new Screen();
+//	screen = new Screen();
 	cover = new Cover();
 
-	over_limit = screen.get_width() - 5;
+	over_limit = window.innerWidth - 5;
 
 	vbar = new V_bar();
 	hbar = new H_bar();
 
 	vbar.check_rapp();
-//	vbar.ref_left();
-
 	hbar.check_rapp();
-//	hbar.ref_top();
 
 	window.addEventListener('resize', on_resize, false);
 	window.addEventListener('scroll', on_scroll, false);
@@ -837,7 +866,7 @@ function on_resize(event) {
 
 	screen.ref_width();
 	screen.ref_height();
-	over_limit = screen.get_width() - 5;
+	over_limit = window.innerWidth - 5;
 
 	if (vbar.down == true) vbar.up_bar();
 	if (hbar.down == true) hbar.up_bar();
