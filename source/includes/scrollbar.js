@@ -71,7 +71,7 @@ function get_msg(event) { //called from the message event handler
 	if (prefs.msg[5]) prefs.b_color = prefs.msg[5];
 
 	if (vbar != null) vbar.update_prefs();
-//	if (hbar != null) hbar.update_prefs();
+	if (hbar != null) hbar.update_prefs();
 
 }
 
@@ -536,6 +536,22 @@ function H_bar() {
 		this.bar.style.backgroundColor = prefs.color;
 	}
 
+	this.update_prefs = function() {
+		this.bar.style.borderColor = prefs.b_color;
+		this.bar.style.backgroundColor = prefs.color;		
+		prefs.alt == "true" ? this.with_alt() : this.without_alt();
+		prefs.hide == "false" ? this.show() : this.try_hide();
+
+		//bar width
+		this.bar_height = prefs.size;
+		this.bar_height_over = this.bar_height * 2;
+		this.bar.style.height = this.bar_height + "px";
+		this.udr.style.height = this.bar_height_over - side_margin + "px";
+		this.over == true ? this.set_over_aspect() : this.set_out_aspect();
+		this.ref_top();
+	}
+
+
 	this.all_to_zero = function() {
 		this.bar.style.width = "0px";
 		this.bar.style.left = "0px";
@@ -776,16 +792,21 @@ function H_bar() {
 
 	this.apply_prop();
 
-	//properties
-	if (prefs.alt == "true") {
+	this.with_alt = function() {
 		this.ref_left = this.ref_left_abs;
 		this.ref_top = this.ref_top_abs;
 		this.bar.style.position = "absolute";
-	} else {
+	}
+	
+	this.without_alt = function() {
 		this.ref_left = this.ref_left_fix;
 		this.ref_top = this.ref_top_fix;
 		this.bar.style.position = "fixed";
 	}
+
+	//alternative bar
+	prefs.alt == "true" ? this.with_alt() : this.without_alt();
+
 
 	//scrolling events handlers
 	this.bar.addEventListener('mouseover', function(){hbar.over_bar()}, false);
