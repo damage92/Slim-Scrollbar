@@ -6,11 +6,11 @@ non si può leggere il valore di default dal config.xml?
 <html>
 
 <head>
-<script src="options_file/options_desc.js"></script>
-<script src="options_file/input_type.js"></script>
+<script src="options_desc.js"></script>
+<script src="input_type.js"></script>
 <script src="translation.js"></script>
 <script src="strings.js"></script>
-<link rel="stylesheet" type="text/css" href="options_file/layout.css">
+<link rel="stylesheet" type="text/css" href="layout.css">
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
@@ -56,7 +56,7 @@ function insert_section_title(title) {
 
 	section = document.createElement("div");
 	section.className = "section_title";
-	section.innerHTML = _(title);
+	section.innerHTML = title;
 	
 	document.getElementById("cont").appendChild(section);
 

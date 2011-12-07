@@ -325,6 +325,8 @@ function V_bar() {
 	this.hdl_down_bar = function(event) {vbar.down_bar(event)}
 	this.down_bar = function(event) {
 	
+		console.log("down");
+	
 		this.down = true;
 
 		this.show();
