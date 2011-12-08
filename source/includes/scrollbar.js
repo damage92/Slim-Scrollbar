@@ -115,13 +115,11 @@ function Cover() {
 		document.onmousedown = false_func;
 
 		document.body.appendChild(this.cov);
-//		document.documentElement.appendChild(this.cov);
 	}
 
 	this.remove = function() {
 		this.ins = false;
 		document.body.removeChild(this.cov);
-//		document.documentElement.removeChild(this.cov);
 		
 		//restore original function
 		if (this.orig_func != undefined)
@@ -370,7 +368,8 @@ function V_bar() {
 
 		this.new_top = this.mouse_pos - this.down_offset;
 
-		window.scrollTo(window.scrollX, (this.new_top - this.bar_margin) * this.scroll_rapp);
+//		window.scrollTo(window.scrollX, (this.new_top - this.bar_margin) * this.scroll_rapp);
+		window.scroll(window.scrollX, (this.new_top - this.bar_margin) * this.scroll_rapp);
 
 		if (prefs.alt == "true") this.new_top = this.new_top + window.scrollY;
 
@@ -405,9 +404,6 @@ function V_bar() {
 				cover.ref_cover_size();
 
 				vbar.ref_rapp();
-//				vbar.ref_left();
-//				vbar.ref_height();
-//				vbar.ref_top();
 
 				hbar.ref_rapp();
 				hbar.ref_top();
@@ -475,14 +471,12 @@ function V_bar() {
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
 	document.body.appendChild(this.bar);
-//	document.documentElement.appendChild(this.bar);
 
 	//create udr object
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:1;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute";//background:green";
 	this.udr.style.zIndex = max_zindex - 1;
 	document.body.appendChild(this.udr);
-//	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
@@ -682,7 +676,8 @@ function H_bar() {
 
 		this.new_left = this.mouse_pos - this.down_offset;
 
-		window.scrollTo((this.new_left - this.bar_margin) * this.scroll_rapp, window.scrollY);
+//		window.scrollTo((this.new_left - this.bar_margin) * this.scroll_rapp, window.scrollY);
+		window.scroll((this.new_left - this.bar_margin) * this.scroll_rapp, window.scrollY);
 
 		if (prefs.alt == "true") this.new_left = this.new_left + window.scrollX;
 
@@ -723,9 +718,6 @@ function H_bar() {
 				vbar.ref_top();
 
 				hbar.ref_rapp();
-//				hbar.ref_top();
-//				hbar.ref_width();
-//				hbar.ref_left();
 			}
 			this.rapp_change();
 		}
@@ -783,13 +775,11 @@ function H_bar() {
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute !important;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
 	document.body.appendChild(this.bar);
-//	document.documentElement.appendChild(this.bar);
 
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:0;visibility:visible+;height:15px;width:0px;left:0px;top:0px;position:absolute";
 	this.udr.style.zIndex = max_zindex - 1;
 	document.body.appendChild(this.udr);
-//	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 
