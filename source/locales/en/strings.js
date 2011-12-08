@@ -13,5 +13,6 @@ var strings = {
 	"version" : "version",
 	"default value": "default value",
 	"General options:" : "General options:",
-	"Bar apparence:" : "Bar apparence:"
+	"Bar apparence:" : "Bar apparence:",
+	"To turn off the default scroll bar go in preferences (ctrl+F12) Advanced > browsing, deactivate \"show scroll bars\"." : "To turn off the default scroll bar go in preferences (ctrl+F12) Advanced > browsing, deactivate \"show scroll bars\"."
 };

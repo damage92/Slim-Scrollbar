@@ -13,5 +13,6 @@ var strings = {
 	"version" : "version",
 	"default value": "tilbakestill til forvalgt verdi",
 	"General options:" : "Generelle instillinger:",
-	"Bar apparence:" : "Rullefelt utseende:"
+	"Bar apparence:" : "Rullefelt utseende:",
+	"To turn off the default scroll bar go in preferences (ctrl+F12) Advanced > browsing, deactivate \"show scroll bars\"."	: "For å slå av standardrullefeltene gå inn i Instillinger (ctrl+F12) Avansert > Nettleser, og velg bort \"Vis rullefelt\"."
 };

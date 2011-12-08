@@ -13,5 +13,6 @@ var strings = {
 	"version" : "versione",
 	"default value": "valore predefinito",
 	"General options:" : "Opzioni generali:",
-	"Bar apparence:" : "Aspetto della barra:"
+	"Bar apparence:" : "Aspetto della barra:",
+	"To turn off the default scroll bar go in preferences (ctrl+F12) Advanced > browsing, deactivate \"show scroll bars\"." : "Per disattivare la barre di scorrimento di Opera andare in preferenze (ctrl+F12) > avanzate > navigazione e disattivare \"barre di scorrimento\"."
 };
