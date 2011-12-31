@@ -48,5 +48,5 @@ var options_desc = {
 		def_value: false,
 		dependencies: new Array()
 	}
-
+	
 };

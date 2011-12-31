@@ -14,5 +14,6 @@ var strings = {
 	"default value": "forvalgt verdi",
 	"General options:" : "Generelle instillinger:",
 	"Bar apparence:" : "Rullefelts utseende:",
-	"To turn off the default scroll bar go in preferences (ctrl+F12) Advanced > browsing, deactivate \"show scroll bars\"."	: "For å slå av standardrullefeltene gå inn i Instillinger (ctrl+F12) Avansert > Nettleser, og velg bort \"Vis rullefelt\"."
+	"To turn off the default scroll bar go in Opera → Preferences → Advanced → Browsing, deactivate “Show scrollbars”." : "",
+	"To turn off the default scroll bar go in Settings → Preferences → Advanced → Browsing, deactivate “Show scrollbars”." : ""
 };
