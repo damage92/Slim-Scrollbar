@@ -34,3 +34,10 @@ Update 0.8-3
  - fixed mouse aiming on right edge bug
 Update 0.8-4
  - fixed "View bar only when mouse is over it" bug
+
+04/03/2012 - version 0.9
+ - added Norwegian bokmål translation
+ - code optimization
+ - better options page
+ - better icon
+ - new translation system
