@@ -10,10 +10,10 @@ var strings = {
 	"Auto hide" : "Skjul automatisk",
 	"auto hide the scrollbars after a few seconds" : "skjul rullefeltene etter noen sekunder",
 	"View bar only when mouse is over it" : "Kun vis rullefeltet når musepekeren er over sjakten",
-	"version" : "version",
+	"version" : "versjon",
 	"default value": "forvalgt verdi",
 	"General options:" : "Generelle instillinger:",
 	"Bar apparence:" : "Rullefelts utseende:",
-	"To turn off the default scroll bar go in Opera → Preferences → Advanced → Browsing, deactivate “Show scrollbars”." : "For å slå av standardrullefeltene gå inn i Instillinger → Avansert → Nettleser, og velg bort “Vis rullefelt”.",
+	"To turn off the default scroll bar go in Opera → Preferences → Advanced → Browsing, deactivate “Show scrollbars”." : "For å slå av standardrullefeltene gå inn i Opera sine Instillinger → Avansert → Nettleser, og velg bort “Vis rullefelt”.",
 	"To turn off the default scroll bar go in Settings → Preferences → Advanced → Browsing, deactivate “Show scrollbars”." : "For å slå av standardrullefeltene gå inn i Instillinger → Avansert → Nettleser, og velg bort “Vis rullefelt”."
 };
