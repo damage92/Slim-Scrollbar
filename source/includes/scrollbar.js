@@ -3,20 +3,13 @@
 // @description	  Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars.
 // @author        Damage92
 // @exclude http://acid3.acidtests.org/
+// @exclude https://docs.google.com/*
 // ==/UserScript==
 
 
-/*TODO
+/*
 side_margin = margine tra la barra e il bordo della finestra
 this.margin = margine del limite dello scorrimento
-
-bugs to solve:
-whell scrolling on Windows
-
-append bugs:
-documentElement -> ing.uniroma2.it
-body -> 24ways.org
-
 */
 
 
@@ -134,13 +127,31 @@ function Cover() {
 function Page() {
 
 	this.get_height = function () {
-		return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, 
-		document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);	
+//		return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, 
+//		document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);	
+
+		return document.documentElement.scrollHeight;
 	}
 
 	this.get_width = function () {
-		return Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth,
-		document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
+//		return Math.max(document.body.scrollWidth, //piccolo
+//		document.documentElement.scrollWidth, //giusto
+//		document.body.offsetWidth, //sbagliato su wiki
+//		document.documentElement.offsetWidth, //sbagliato su tutti
+//		document.body.clientWidth, //sbagliato su wiki 
+//		document.documentElement.clientWidth); //sbagliato su tutti
+
+//		console.log(document.documentElement.offsetWidth);
+
+//		return document.body.scrollWidth; //sbagliato su wiki e addons		ok
+//		return document.documentElement.scrollWidth; //giusto se ridotto
+//		return document.body.offsetWidth; //sbagliato su wiki			ok
+//		return document.documentElement.offsetWidth; //sbagliato su tutti	ok
+//		return document.body.clientWidth; //sbagliato su wiki 			ok
+//		return document.documentElement.clientWidth; //sbagliato su tutti	ok
+
+	       return document.documentElement.scrollWidth;
+
 	}
 }
 /*
@@ -691,7 +702,7 @@ function H_bar() {
 	}
 
 	this.ref_rapp = function() {
-	
+
 		this.old_rapp = this.norm_rapp;	
 		this.norm_rapp = (window.innerWidth - (this.bar_margin * 2)) / page.get_width();
 		this.rapp = this.norm_rapp;
@@ -720,6 +731,7 @@ function H_bar() {
 			}
 			this.rapp_change();
 		}
+
 	}
 
 	this.rapp_change = function() {
@@ -875,8 +887,8 @@ function init() {
 
 function on_resize(event) {
 
-	screen.ref_width();
-	screen.ref_height();
+//	screen.ref_width();
+//	screen.ref_height();
 	over_limit = window.innerWidth - 5;
 
 	if (vbar.down == true) vbar.up_bar();

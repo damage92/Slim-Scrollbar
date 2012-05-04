@@ -2,7 +2,7 @@
 
 "A scrollbar with auto-hide" : ""
 
-"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for netbooks.
+"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
 
 ATTENTION:
 The extension can't automatically turn off the default scrollbars. To do so, open Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
