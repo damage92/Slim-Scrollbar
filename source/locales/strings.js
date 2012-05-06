@@ -1,4 +1,5 @@
 var strings = {
+	"by Damage92" : "",
 	"Bars color" : "",
 	"color of the bars" : "",
 	"Border color" : "",
