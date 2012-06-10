@@ -129,32 +129,14 @@ function Page() {
 	this.get_height = function () {
 		return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, 
 		document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);	
-
-//		return document.documentElement.scrollHeight;
 	}
 
 	this.get_width = function () {
-		return Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
 
-//		return document.body.scrollWidth; //sbagliato su wiki e addons		ok
-//		return document.documentElement.scrollWidth; //giusto se ridotto
-//		return document.body.offsetWidth; //sbagliato su wiki			ok
-//		return document.documentElement.offsetWidth; //sbagliato su tutti	ok
-//		return document.body.clientWidth; //sbagliato su wiki 			ok
-//		return document.documentElement.clientWidth; //sbagliato su tutti	ok
+		return Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth,
+		document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
 
-/*
-		console.log("====");
-		console.log(document.body.scrollWidth); //sbagliato su wiki e addons		ok
-		console.log(document.documentElement.scrollWidth); //giusto se ridotto
-		console.log(document.body.offsetWidth); //sbagliato su wiki			ok
-		console.log(document.documentElement.offsetWidth); //sbagliato su tutti	ok
-		console.log(document.body.clientWidth); //sbagliato su wiki 			ok
-		console.log(document.documentElement.clientWidth); //sbagliato su tutti	ok
-		console.log("====");
-*/
-		return document.documentElement.scrollWidth;
-	}
+		}
 }
 
 function V_bar() {
@@ -438,15 +420,21 @@ function V_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.bar);
-	else document.body.appendChild(this.bar);
+
+	document.documentElement.appendChild(this.bar);
+
+//	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.bar);
+//	else document.body.appendChild(this.bar);
 
 	//create udr object
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:0;visibility:visible;width:0px;height:0px;left:0px;top:0px;position:absolute";//background:green";
 	this.udr.style.zIndex = max_zindex - 1;
-	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.udr);
-	else document.body.appendChild(this.udr);
+
+	document.documentElement.appendChild(this.udr);
+
+//	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.udr);
+//	else document.body.appendChild(this.udr);
 
 	this.apply_prop();
 
@@ -748,14 +736,16 @@ function H_bar() {
 	this.bar = document.createElement("div");
 	this.bar.style="background:black;width:0px;height:0px;left:0px;top:0px;position:absolute;visibility:visible";
 	this.bar.style.zIndex = max_zindex;
-	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.bar);
-	else document.body.appendChild(this.bar);
+//	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.bar);
+//	else document.body.appendChild(this.bar);
+	document.documentElement.appendChild(this.bar);
 
 	this.udr = document.createElement("div");
 	this.udr.style="opacity:1;visibility:visible;height:15px;width:0px;left:0px;top:0px;position:absolute;";
 	this.udr.style.zIndex = max_zindex - 1;
-	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.udr);
-	else document.body.appendChild(this.udr);
+//	if (window.location.host == "xkcd.com") document.documentElement.appendChild(this.udr);
+//	else document.body.appendChild(this.udr);
+	document.documentElement.appendChild(this.udr);
 
 	this.apply_prop();
 

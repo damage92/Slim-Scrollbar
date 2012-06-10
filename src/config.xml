@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.9">
+<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="#ver_num#">
 	<name xml:lang="en">Slim Scrollbar</name>
 	<name xml:lang="nb">Tynne rullefelt</name>
 	<author href="http://stylecode.altervista.org">Damage92</author>
