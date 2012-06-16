@@ -80,7 +80,7 @@ function false_func() { return false; }
 
 function Cover() {
 	this.cov = document.createElement("div");
-	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px;";
+	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px;opacity:0";
 	this.cov.style.zIndex = max_zindex - 2;
 	this.ins = false;
 	this.orig_func;

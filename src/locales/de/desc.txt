@@ -1,6 +1,6 @@
-"Slim Scrollbar." : ""
+"Slim Scrollbar." : "Slim Scrollbar"
 
-"A scrollbar with auto-hide" : ""
+"A scrollbar with auto-hide" : "Eine Bildlaufleiste mit Ausblend-Automatik"
 
 "Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
 
@@ -12,6 +12,21 @@ A well-know issue on oldest computers is performance degredation during scrollin
 If you want to translate this extension you can email me or visit support page.
 
 Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
-Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation."  : ""
+Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation."  : "
 
-"polish translation" : ""
+
+
+Slim Scrollbar ersetzt die Standard-Bildlaufleisten durch zwei einfache Leisten, die sich automatisch ausblenden können. Diese Bildlaufleisten erscheinen nur während dem Scrollen. So ist mehr Platz zur Verfügung. Dies ist besonders nützlich für kleine Bildschirme.
+
+ACHTUNG:
+Diese Erweiterung kann die Standard-Bildlaufleisten nicht deaktivieren. Um sie auszuschalten, gehen Sie zu Einstellungen ▹ Erweitert ▹ Browser und deaktivieren dort "Bildlaufleisten zeigen". 
+
+Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während dem Scrollen. Sie können versuchen, dies zu verbessern, indem Sie die Option "Langsames Scrollen korrigieren" aktivieren, jedoch kann es dann zum Flimmern der Bildlaufleisten kommen.
+
+Wenn Sie diese Erweiterung übersetzen möchten, können Sie mich per e-mail oder über die Supportseite kontaktieren.
+
+Dank an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
+Dank an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung."
+
+"polish translation" : "polnische Übersetzung"
+"german translation" : "deutsche Übersetzung"

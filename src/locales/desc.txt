@@ -14,4 +14,4 @@ If you want to translate this extension you can email me or visit support page.
 Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
 Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation."  : ""
 
-"polish translation" : ""
+"german translation" : ""

@@ -39,7 +39,8 @@ input[type=range] {
 #cont {
 	line-height:25px;
 	margin-left:auto;
-	margin-right:auto; width:700px;
+	margin-right:auto;
+	width:730px;
 	font-family:arial;
 	background:#F2F2F2;
 	padding: 1px 10px 8px 10px;
