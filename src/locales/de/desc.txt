@@ -25,8 +25,8 @@ Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während de
 
 Wenn Sie diese Erweiterung übersetzen möchten, können Sie mich per e-mail oder über die Supportseite kontaktieren.
 
-Dank an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
-Dank an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung."
+Danke an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
+Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung."
 
 "polish translation" : "polnische Übersetzung"
 "german translation" : "deutsche Übersetzung"
