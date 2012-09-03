@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="options_file/options_desc.js"></script>
+<script src="options_file/input_type.js"></script>
+<script src="translation.js"></script>
+<script src="strings.js"></script>
+<link rel="stylesheet" type="text/css" href="options_file/layout.css">
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+</head>
+
+<body>
+<div id="cont"></div>
+
+<script>
+
+function set_def_value(id) {
+	input = document.getElementById("opt_"+id+"_input");
+	input.set_value(options_desc[id].def_value);
+}
+
+function add_option(id) {
+
+	input = create_input_element(id);
+	
+	desc = document.createElement("span");
+	desc.className = "desc";
+	
+	desc_string = _(options_desc[id].title);
+	if (_(options_desc[id].desc) != "") desc_string += " - <span class=\"long_desc\">" + _(options_desc[id].desc) + "</span>";
+	desc.innerHTML = desc_string;
+	
+	
+	def_value = document.createElement("span");
+	def_value.className = "def_value";
+	def_value.innerHTML = "<a style=\"text-decoration:none\" href='javascript:set_def_value(\""+id+"\")'>["+_("default value")+"]</a>";
+	
+	option_container = document.createElement("div");
+	option_container.setAttribute("id", "opt_"+id);
+	option_container.appendChild(input);
+	option_container.appendChild(desc);
+	option_container.appendChild(def_value);
+
+	document.getElementById("cont").appendChild(option_container);
+
+}
+
+function insert_section_title(title) {
+
+	section = document.createElement("div");
+	section.className = "section_title";
+	section.innerHTML = _(title);
+	
+	document.getElementById("cont").appendChild(section);
+
+}
+
+function apply_deps(name) {
+	document.getElementById("opt_"+name+"_input").apply_deps();
+}
+
+function load() {
+
+	document.title = _("Slim Scrollbar options page");
+	
+	document.getElementById("cont").innerHTML += "<p class=\"header\">Slim Scrollbar <span style=\"font-size:13px\">"+_("version")+" 0.9-3</span><br><a href=\"http://stylecode.altervista.org\" style=\"font-size:15px\">"+_("by Damage92")+"</a></p>";
+
+	if ( (navigator.platform == "Mac") || (navigator.platform == "MacIntel") )
+		document.getElementById("cont").innerHTML += "<b>"+_("To turn off the default scroll bar go in Opera → Preferences → Advanced → Browsing, deactivate “Show scrollbars”.")+"</b><br>";
+	else
+		document.getElementById("cont").innerHTML += "<b>"+_("To turn off the default scroll bar go in Settings → Preferences → Advanced → Browsing, deactivate “Show scrollbars”.")+"</b><br>";
+
+
+	insert_section_title("General options:");
+	add_option("alternative");
+	add_option("auto_hide");
+	add_option("only_over");		
+		apply_deps("auto_hide");
+
+	insert_section_title("Bar apparence:");
+	add_option("color");
+	add_option("b_color");
+	add_option("size");
+	
+	
+}
+
+document.addEventListener("DOMContentLoaded", load, false);
+
+</script>
+
+<body>
+</html>

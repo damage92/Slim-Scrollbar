@@ -1,0 +1,28 @@
+"Slim Scrollbar"
+"Slim Scrollbar"
+
+
+"A scrollbar with auto-hide"
+"Una barra di scorrimento che si nasconde automaticamente"
+
+
+"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
+
+ATTENTION:
+The extension can't automatically turn of the default scrollbars. To do it go in Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
+
+A well-know issue on oldest computers is performance loss during scrolling. You can try to activate "solve slow scrolling" options, but maybe the bars will flicker.
+
+If you want to translate this extension you can email me or visit support page.
+
+Thanks to Daniel (https://twitter.com/#!/Aeyoun) for Norwegian bokmål translation and code support."
+
+
+"Slim Scrollbar sostituisce le barre di scorrimento con due semplici barre a scomparsa. Le due barre sono visibili solo quando si fa lo scrolling. In questo modo si salva spazio, utile soprattutto sui netbook.
+
+ATTENZIONE:
+L'estensione non può disattivare automaticamente le barre predefinite. Per far ciò occorre andare in preferenze ▹ Avanzate ▹ navigazione, deselezionare "barre di scorrimento".
+
+Utilizzando l'estensione sui computer più vecchi lo scorrimento della pagina potrebbe non essere fluido. E' possibile provare ad attivare la relativa opzione (risolvi scorrimento lento), ma la barra potrebbe comunque sfarfallare.
+
+Grazie a Daniel (https://twitter.com/#!/Aeyoun) per la traduzione in Norvegese e per il supporto al codice"
