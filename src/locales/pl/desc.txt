@@ -25,3 +25,5 @@ Dziękuję Danielowi (https://twitter.com/#!/Aeyoun) za przełożenie na norwesz
 Dziękuję Piotrowi Wójcikowi (http://my.opera.com/chocimir) za przekład na polszczyznę."
 
 "polish translation" : "polskie tłumaczenie"
+"fixed octopress incompatibility" : "rozwiązano konflikt z octopress"
+"german translation" : "przetłumaczono na j. niemiecki"

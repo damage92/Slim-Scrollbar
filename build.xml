@@ -2,7 +2,7 @@
 <project name="Slimscrollbar" default="build">
 
 	<!-- properties and fileset -->
-	<property name="ver_num" value="0.9-2"/>
+	<property name="ver_num" value="0.9-3"/>
 	<property name="ext_name" value="slimscrollbar"/>
 	<fileset id="propdeps" dir="src/" casesensitive="yes">
 		<!-- files to overwrite also if not newer because contains a property maybe to refresh -->
@@ -22,6 +22,7 @@
 		<replaceregexp file="build/options.html" match="#ver_num#" flags="gs" replace="${ver_num}" />
 
 	</target>
+
 
 	<target name="clean" description="remove build and oex">
 
