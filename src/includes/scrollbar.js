@@ -71,6 +71,7 @@ function get_msg(event) { //called from the message event handler
 
 function prevent_event (event) {
 
+if (vbar)
 if ((event.event.target == vbar.bar) || (event.event.target == vbar.udr) || (event.event.target == hbar.bar) || (event.event.target == hbar.udr))
 if ( (event.listener != vbar.hdl_udr_click) && (event.listener != vbar.hdl_down_bar) && (event.listener != vbar.hdl_up_bar) && (event.listener != hbar.hdl_udr_click) && (event.listener != hbar.hdl_down_bar) && (event.listener != hbar.hdl_up_bar) && (event.listener != false_func) )
 			event.preventDefault();
