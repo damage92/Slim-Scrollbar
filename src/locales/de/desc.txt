@@ -1,4 +1,4 @@
-lim Scrollbar." : "Slim Scrollbar"
+"Slim Scrollbar." : "Slim Scrollbar"
 
 "A scrollbar with auto-hide" : "Eine Bildlaufleiste mit Ausblend-Automatik"
 
@@ -14,8 +14,6 @@ If you want to translate this extension you can email me or visit support page.
 Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
 Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation."  : "
 
-
-
 Slim Scrollbar ersetzt die Standard-Bildlaufleisten durch zwei einfache Leisten, die sich automatisch ausblenden können. Diese Bildlaufleisten erscheinen nur während dem Scrollen. So ist mehr Platz zur Verfügung. Dies ist besonders nützlich für kleine Bildschirme.
 
 ACHTUNG:
@@ -26,7 +24,13 @@ Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während de
 Wenn Sie diese Erweiterung übersetzen möchten, können Sie mich per e-mail oder über die Supportseite kontaktieren.
 
 Danke an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
+<<<<<<< HEAD
+Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung.
+Danke an myonno für die deutsche Übersetzung."
+=======
 Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung."
+>>>>>>> f644d3f9f7cddb917cc639b2ddaadd590fe5170b
 
 "polish translation" : "polnische Übersetzung"
 "german translation" : "deutsche Übersetzung"
+"fixed octopress incompatibility" : "Inkompatibilität mit Octropress behoben"

@@ -4,6 +4,7 @@
 // @author        Damage92
 // @exclude http://acid3.acidtests.org/
 // @exclude https://docs.google.com/*
+// @exclude http://grooveshark.com/*
 // ==/UserScript==
 
 
