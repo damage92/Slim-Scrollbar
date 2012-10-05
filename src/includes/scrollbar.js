@@ -37,35 +37,25 @@ window.opera.addEventListener('BeforeEventListener.mouseup', prevent_event, fals
 }
 
 function check_init() {
-	if ((prefs.msg != undefined) && (document.body != null)) init();
+	if (document.body != null) init();
 	else init_time = setTimeout(check_init, 500);
 }
 
 
 function Prefs() {
 	//default values
-	this.alt = "false";
-	this.hide = "true";
-	this.size = 5;
-	this.color = "black";
-	this.b_color = "white";
-	this.only_over = "false";
+	this.alt = widget.preferences.alternative ? widget.preferences.alternative : "false";
+	this.hide = widget.preferences.auto_hide ? widget.preferences.auto_hide : "true";
+	this.size = widget.preferences.size ? widget.preferences.size : 5;
+	this.color = widget.preferences.color ? widget.preferences.color : "black";
+	this.b_color = widget.preferences.b_color ? widget.preferences.b_color : "white";
+	this.only_over = widget.preferences.only_over ? widget.preferences.only_over : "false";
 	
 }
 
 function get_msg(event) { //called from the message event handler
-	prefs.msg = event.data;
-
-	if (prefs.msg[0]) prefs.alt = prefs.msg[0];
-	if (prefs.msg[1]) prefs.hide = prefs.msg[1];
-	if (prefs.msg[2]) prefs.size = prefs.msg[2];
-	if (prefs.msg[3]) prefs.color = prefs.msg[3];
-	if (prefs.msg[4]) prefs.only_over = prefs.msg[4];
-	if (prefs.msg[5]) prefs.b_color = prefs.msg[5];
-
 	if (vbar != null) vbar.update_prefs();
 	if (hbar != null) hbar.update_prefs();
-
 }
 
 
@@ -166,6 +156,7 @@ function V_bar() {
 	}
 
 	this.update_prefs = function() {
+		prefs = new Prefs();
 		this.bar.style.borderColor = prefs.b_color;
 		this.bar.style.backgroundColor = prefs.color;		
 		prefs.alt == "true" ? this.with_alt() : this.without_alt();
@@ -491,6 +482,7 @@ function H_bar() {
 	}
 
 	this.update_prefs = function() {
+		prefs = new Prefs();
 		this.bar.style.borderColor = prefs.b_color;
 		this.bar.style.backgroundColor = prefs.color;		
 		prefs.alt == "true" ? this.with_alt() : this.without_alt();
