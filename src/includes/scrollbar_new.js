@@ -8,7 +8,7 @@
 
 window.addEventListener("DOMContentLoaded", function(){
 
-	if(window.self != window.top) return 0; // only treat main page not iframes, adds, etc.
+	if(window.self != window.top) return 0; // only treat main page not iframes, ads, etc.
 	
 	inject_css();	
 	initialize_bars();
@@ -23,20 +23,28 @@ window.addEventListener("DOMContentLoaded", function(){
 	window.addEventListener("DOMNodeRemoved", adjust_bars, false);
 	window.addEventListener("resize", adjust_bars, false);
 	window.addEventListener("scroll", reposition_bars, false);
+	
+	opera.extension.onmessage = inject_css;
 
 },false);
 
 function inject_css(){
-	var style = document.createElement("style");
-	style.setAttribute("type","text/css");
-	style.innerHTML = "#SS_v_container{ position:fixed; height:100%; width:50px; right:0px; top:0px; z-index:9997; } #SS_v_container:hover #SS_vbar, #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar, #SS_h_container:hover #SS_hbar_bg{ opacity:0.5; transition:opacity 0.5s 0s; -o-transition:opacity 0.5s 0s; } #SS_h_container{ position:fixed; height:50px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:0; position:fixed; z-index:9998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:14px; } #SS_hbar_bg{ left:0px; bottom:0px; height:14px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:0; position:fixed; z-index:9999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:14px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:14px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:9996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
-	try{ document.getElementsByTagName("head")[0].appendChild(style); }
-	catch(e){
-		try{
-			var head = document.createElement("head");
-			head.appendChild(style);
-			document.body.appendChild(head);
-		}catch(e){ opera.postError("Smart Clipboard failed to inject its style"); }
+	var ss_style = "#SS_v_container{ position:fixed; height:100%; width:30px; right:0px; top:0px; z-index:99997; } #SS_v_container:hover #SS_vbar, #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar, #SS_h_container:hover #SS_hbar_bg{ opacity:0.5; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_h_container{ position:fixed; height:30px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:0; position:fixed; z-index:99998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:14px; } #SS_hbar_bg{ left:0px; bottom:0px; height:14px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:0; position:fixed; z-index:99999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:14px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:14px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
+	
+	if(document.getElementById("SS_style")) document.getElementById("SS_style").innerHTML = ss_style;
+	else{
+		var style = document.createElement("style");
+		style.setAttribute("type","text/css");
+		style.id = "SS_style";
+		style.innerHTML = ss_style;
+		try{ document.getElementsByTagName("head")[0].appendChild(style); }
+		catch(e){
+			try{
+				var head = document.createElement("head");
+				head.appendChild(style);
+				document.body.appendChild(head);
+			}catch(e){ opera.postError("Slim Scrollbar failed to inject its style"); }
+		}
 	}
 }
 
