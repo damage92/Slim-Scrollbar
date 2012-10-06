@@ -43,7 +43,15 @@ var options_desc = {
 	
 	only_over: {	
 		type: "checkbox",
-		title: "View bar only when mouse is over it",
+		title: "Show bar only when mouse is over it",
+		desc: "",
+		def_value: false,
+		dependencies: new Array()
+	},
+	
+	no_bar_bg: {	
+		type: "checkbox",
+		title: "Hide the background bars",
 		desc: "",
 		def_value: false,
 		dependencies: new Array()

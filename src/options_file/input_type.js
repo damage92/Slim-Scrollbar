@@ -42,7 +42,6 @@ PROTOTYPE:
 		
 		input.save_prefs = function() {
 			widget.preferences[this.opt_id] = this.value;
-			//widget.preferences.changed = "true";
 			opera.extension.postMessage("update");
 		};
 
@@ -88,7 +87,6 @@ PROTOTYPE:
 
 		input.save_prefs = function() {
 			widget.preferences[this.opt_id] = this.value;
-			//widget.preferences.changed = "true";
 			opera.extension.postMessage("update");			
 		};
 		
@@ -132,7 +130,6 @@ PROTOTYPE:
 		
 		input.save_prefs = function() {
 			widget.preferences[this.opt_id] = this.checked;
-			//widget.preferences.changed = "true";
 			opera.extension.postMessage("update");			
 		};
 	
@@ -167,7 +164,6 @@ PROTOTYPE:
 		
 		input.save_prefs = function() {
 			widget.preferences[this.opt_id] = this.value;
-			//widget.preferences.changed = "true";
 			opera.extension.postMessage("update");
 		};
 		

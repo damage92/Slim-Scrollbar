@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", function(){
 },false);
 
 function inject_css(){
-	var ss_style = "#SS_v_container{ position:fixed; height:100%; width:30px; right:0px; top:0px; z-index:99997; } #SS_v_container:hover #SS_vbar, #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar, #SS_h_container:hover #SS_hbar_bg{ opacity:0.5; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_h_container{ position:fixed; height:30px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_hbar_bg{ left:0px; bottom:0px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
+	var ss_style = "#SS_v_container{ position:fixed; height:100%; width:30px; right:0px; top:0px; z-index:99997; } #SS_v_container:hover #SS_vbar, #SS_h_container:hover #SS_hbar{ opacity:0.5; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar_bg{ opacity:"+((widget.preferences.no_bar_bg == "true")?"0":"0.5")+"; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_h_container{ position:fixed; height:30px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_hbar_bg{ left:0px; bottom:0px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
 	
 	if(document.getElementById("SS_style")) document.getElementById("SS_style").innerHTML = ss_style;
 	else{
@@ -82,7 +82,7 @@ function resize_bars(){
 function resize_vbar(){
 	//don't display if content fits into window:
 	if(Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)<=window.innerHeight){
-		if(document.getElementById("SS_vbar_bg").style.display = "inline"){
+		if(document.getElementById("SS_vbar").style.display = "inline"){
 			document.getElementById("SS_v_container").style.display = "none";
 			document.getElementById("SS_vbar_bg").style.display = "none";
 			document.getElementById("SS_vbar").style.display = "none";
@@ -92,7 +92,7 @@ function resize_vbar(){
 	
 	document.getElementById("SS_vbar").style.height = Math.round(window.innerHeight/(Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)/window.innerHeight))+"px"; // resize it
 	
-	if(document.getElementById("SS_vbar_bg").style.display = "none"){
+	if(document.getElementById("SS_vbar").style.display = "none"){
 		document.getElementById("SS_v_container").style.display = "inline";
 		document.getElementById("SS_vbar_bg").style.display = "inline";
 		document.getElementById("SS_vbar").style.display = "inline";
@@ -102,7 +102,7 @@ function resize_vbar(){
 function resize_hbar(){
 	//don't display if content fits into window:
 	if(Math.max(document.body.scrollWidth,document.documentElement.scrollWidth)<=window.innerWidth){
-		if(document.getElementById("SS_hbar_bg").style.display = "inline"){
+		if(document.getElementById("SS_hbar").style.display = "inline"){
 			document.getElementById("SS_h_container").style.display = "none";
 			document.getElementById("SS_hbar_bg").style.display = "none";
 			document.getElementById("SS_hbar").style.display = "none";
@@ -112,7 +112,7 @@ function resize_hbar(){
 	
 	document.getElementById("SS_hbar").style.width = Math.round(window.innerWidth/(Math.max(document.body.scrollWidth,document.documentElement.scrollWidth)/window.innerWidth))+"px"; // resize it
 	
-	if(document.getElementById("SS_hbar_bg").style.display = "none"){
+	if(document.getElementById("SS_hbar").style.display = "none"){
 		document.getElementById("SS_h_container").style.display = "inline";
 		document.getElementById("SS_hbar_bg").style.display = "inline";
 		document.getElementById("SS_hbar").style.display = "inline";
@@ -196,7 +196,7 @@ function hide_bars(){
 function show_bar(whichone){
 	document.getElementById("SS_"+whichone+"bar_bg").style.transition = "opacity 0.25s 0s";
 	document.getElementById("SS_"+whichone+"bar_bg").style.oTransition = "opacity 0.25s 0s";
-	document.getElementById("SS_"+whichone+"bar_bg").style.opacity = "0.5";
+	if(widget.preferences.no_bar_bg != "true") document.getElementById("SS_"+whichone+"bar_bg").style.opacity = "0.5";
 	if(document.getElementById("SS_"+whichone+"bar").style.opacity == 0.7) return; // don't alter if bar is dragged
 	document.getElementById("SS_"+whichone+"bar").style.transition = "opacity 0.25s 0s";
 	document.getElementById("SS_"+whichone+"bar").style.oTransition = "opacity 0.25s 0s";

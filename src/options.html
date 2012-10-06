@@ -26,7 +26,8 @@ function add_option(id) {
 
 	input = create_input_element(id);
 	
-	desc = document.createElement("span");
+	desc = document.createElement("label");
+	desc.htmlFor = "opt_"+id+"_input";
 	desc.className = "desc";
 	
 	desc_string = _(options_desc[id].title);
@@ -75,16 +76,16 @@ function load() {
 
 
 	insert_section_title("General options:");
-	add_option("alternative");
+	if(window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)<12.1) add_option("alternative");
 	add_option("auto_hide");
 	add_option("only_over");		
 		apply_deps("auto_hide");
 
 	insert_section_title("Bar apparence:");
 	add_option("color");
-	add_option("b_color");
+	if(window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)<12.1)add_option("b_color");
 	add_option("size");
-	
+	if(window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)>=12.1) add_option("no_bar_bg");	
 	
 }
 
