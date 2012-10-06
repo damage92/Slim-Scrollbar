@@ -7,8 +7,9 @@
 // ==/UserScript==
 
 window.addEventListener("DOMContentLoaded", function(){
-
-	if(window.self != window.top) return 0; // only treat main page not iframes, ads, etc.
+	
+	if(window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)<12.1) return; // only for Opera 12.10+
+	if(window.self != window.top) return; // only treat main page not iframes, ads, etc.
 	
 	inject_css();	
 	initialize_bars();
