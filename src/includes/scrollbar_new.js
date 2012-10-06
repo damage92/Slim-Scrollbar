@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          SlimScrollbar
-// @description	  Slim Scrollbar is an Opera extension that replaces default scroll bars with two simple auto-hide bars.
+// @description	  Slim Scrollbar is an Opera extension that replaces Opera's default scroll bars with two simple auto-hide bars.
 // @author        Damage92, Christoph142
 // @exclude http://acid3.acidtests.org/
 // @exclude http://grooveshark.com/*
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function(){
 },false);
 
 function inject_css(){
-	var ss_style = "#SS_v_container{ position:fixed; height:100%; width:30px; right:0px; top:0px; z-index:99997; } #SS_v_container:hover #SS_vbar, #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar, #SS_h_container:hover #SS_hbar_bg{ opacity:0.5; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_h_container{ position:fixed; height:30px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:0; position:fixed; z-index:99998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:14px; } #SS_hbar_bg{ left:0px; bottom:0px; height:14px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:0; position:fixed; z-index:99999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:14px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:14px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
+	var ss_style = "#SS_v_container{ position:fixed; height:100%; width:30px; right:0px; top:0px; z-index:99997; } #SS_v_container:hover #SS_vbar, #SS_v_container:hover #SS_vbar_bg, #SS_h_container:hover #SS_hbar, #SS_h_container:hover #SS_hbar_bg{ opacity:0.5; transition:opacity 0.1s 0s; -o-transition:opacity 0.1s 0s; } #SS_h_container{ position:fixed; height:30px; width:100%; left:0px; bottom:0px; z-index:9997; } #SS_vbar_bg, #SS_hbar_bg{ background-color:#999; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99998; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar_bg{ right:0px; top:0px; height:100%; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_hbar_bg{ left:0px; bottom:0px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; width:100%; } #SS_vbar, #SS_hbar{ background-color:"+(widget.preferences.color?widget.preferences.color:"#000")+"; opacity:"+((widget.preferences.auto_hide=="false")?"0.5":"0")+"; position:fixed; z-index:99999; box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5); border-radius:7px; display:none; transition:opacity 0.5s 1s; -o-transition:opacity 0.5s 1s; } #SS_vbar{ right:0px; top:0px; height:30px; min-height:30px; width:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_vbar:hover, #SS_hbar:hover{ opacity:0.7; } #SS_hbar{ left:0px; bottom:0px; width:30px; min-width:30px; height:"+(widget.preferences.size?widget.preferences.size*2:"14")+"px; } #SS_page_cover{ display:none; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99996; background-color:rgba(0,0,0,0); } .visible{ opacity:1; }";
 	
 	if(document.getElementById("SS_style")) document.getElementById("SS_style").innerHTML = ss_style;
 	else{
@@ -183,7 +183,10 @@ function scroll_bg_h(){
 	else window.scrollBy(-window.innerWidth, 0);
 }
 
-function show_bars(){ show_bar("v"); show_bar("h"); }
+function show_bars(){
+	if(widget.preferences.only_over == "true") return;
+	show_bar("v"); show_bar("h");
+}
 function hide_bars(){
 	if(document.getElementById("SS_vbar").style.opacity == 0.7 || document.getElementById("SS_hbar").style.opacity == 0.7) return; // don't hide if bar is dragged
 	hide_bar("v"); hide_bar("h");
