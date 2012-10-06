@@ -20,7 +20,7 @@ var options_desc = {
 		step: 1,
 		title: "Size",
 		desc: "the size of the bars",
-		def_value: 5
+		def_value: (window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)>=12.1 ? 7 : 5)
 	},
 	
 	alternative: {
