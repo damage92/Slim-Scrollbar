@@ -20,7 +20,7 @@ var options_desc = {
 		step: 1,
 		title: "Size",
 		desc: "the size of the bars",
-		def_value: (window.navigator.userAgent.substr(window.navigator.userAgent.length-5,4)>=12.1 ? 7 : 5)
+		def_value: 5
 	},
 	
 	alternative: {
@@ -44,14 +44,6 @@ var options_desc = {
 	only_over: {	
 		type: "checkbox",
 		title: "Show bar only when mouse is over it",
-		desc: "",
-		def_value: false,
-		dependencies: new Array()
-	},
-	
-	no_bar_bg: {	
-		type: "checkbox",
-		title: "Hide the background bars",
 		desc: "",
 		def_value: false,
 		dependencies: new Array()

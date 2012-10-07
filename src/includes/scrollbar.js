@@ -16,8 +16,6 @@ this.margin = margine del limite dello scorrimento
 
 (function() {
 
-if(window.opera.version()>=12.1) return; // only for Opera up to 12.02
-
 function get_value(par) {return parseInt(par.split("px")[0])}
 
 if (window.top == window) {

@@ -76,16 +76,15 @@ function load() {
 
 
 	insert_section_title("General options:");
-	if(window.opera.version()<12.1) add_option("alternative");
+	add_option("alternative");
 	add_option("auto_hide");
 	add_option("only_over");		
 		apply_deps("auto_hide");
 
 	insert_section_title("Bar apparence:");
 	add_option("color");
-	if(window.opera.version()<12.1)add_option("b_color");
+	add_option("b_color");
 	add_option("size");
-	if(window.opera.version()>=12.1) add_option("no_bar_bg");	
 	
 }
 

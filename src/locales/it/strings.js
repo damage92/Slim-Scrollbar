@@ -9,7 +9,7 @@ var strings = {
 	"use this option if you are experiencing slow scrolling" : "usa questa opzione se lo scrolling è lento",
 	"Auto hide" : "Auto scomparsa",
 	"auto hide the scrollbars after a few seconds" : "nascondi automaticamente le barre dopo alcuni secondi",
-	"View bar only when mouse is over it" : "Mostra le barre solo passandoci sopra il mouse",
+	"Show bar only when mouse is over it" : "Mostra le barre solo passandoci sopra il mouse",
 	"version" : "versione",
 	"default value": "valore predefinito",
 	"General options:" : "Opzioni generali:",
