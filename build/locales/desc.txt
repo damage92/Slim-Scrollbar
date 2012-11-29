@@ -12,6 +12,7 @@ A well-know issue on oldest computers is performance degredation during scrollin
 If you want to translate this extension you can email me or visit support page.
 
 Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
-Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation."  : ""
+Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation.
+Thanks to myonno for german translation."  : ""
 
 "german translation" : ""

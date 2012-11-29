@@ -385,9 +385,8 @@ function V_bar() {
 			//+1 because on mouseover bar is moved to the window border for 1 pixel
 	}
 	this.ref_left_fix = function() {
-		this.bar.style.left = window.innerWidth - get_value(this.bar.style.width) - side_margin + this.side_margin_corr + "px";
+		this.bar.style.left = window.innerWidth - get_value(this.bar.style.width) - side_margin + this.side_margin_corr  + "px";
 		this.udr.style.left = window.innerWidth + window.scrollX - this.bar_width_over + "px";
-			//+1 because on mouseover bar is moved to the window border for 1 pixel
 	}
 
 	this.ref_top_abs = function() {
