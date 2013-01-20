@@ -9,7 +9,7 @@ var strings = {
 	"use this option if you are experiencing slow scrolling" : "bruk dette valget om du opplever treg rulling",
 	"Auto hide" : "Skjul automatisk",
 	"auto hide the scrollbars after a few seconds" : "skjul rullefeltene etter noen sekunder",
-	"View bar only when mouse is over it" : "Kun vis rullefeltet når musepekeren er over sjakten",
+	"Show bar only when mouse is over it" : "Kun vis rullefeltet når musepekeren er over sjakten",
 	"version" : "versjon",
 	"default value": "forvalgt verdi",
 	"General options:" : "Generelle instillinger:",

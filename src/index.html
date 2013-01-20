@@ -3,37 +3,10 @@
 <head>
 <title>Slim Scrollbar</title>
 <script>
-
-	var prefs = new Array;
-	widget.preferences.changed = "false"; //if prefs was changed by user, then send new prefs to script
-	read_prefs();
-
-	//read prefs from widget.preferences	
-	function read_prefs() {
-		prefs[0] = widget.preferences.alternative;
-		prefs[1] = widget.preferences.auto_hide;
-		prefs[2] = widget.preferences.size;
-		prefs[3] = widget.preferences.color;
-		prefs[4] = widget.preferences.only_over;
-		prefs[5] = widget.preferences.b_color;
+	opera.extension.onmessage = function(event){
+		// forward update-request to all tabs:
+		if(event.data == "update") opera.extension.broadcastMessage("update");
 	}
-
-	//send prefs on script load
-	opera.extension.onconnect = function(event) {
-		event.source.postMessage(prefs);
-	}
-	
-	//send prefs on script on prefs change
-	opera.extension.tabs.onfocus = function() {
-		if (widget.preferences.changed == "true") {
-			read_prefs();
-			opera.extension.broadcastMessage(prefs);
-			widget.preferences.changed = "false";
-		}
-	}
-	
-	
 </script>
-
 </head>
 </html>

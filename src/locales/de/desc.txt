@@ -1,8 +1,8 @@
-"Slim Scrollbar." : "Slim Scrollbar"
+﻿"Slim Scrollbar." : "Slim Scrollbar"
 
 "A scrollbar with auto-hide" : "Eine Bildlaufleiste mit Ausblend-Automatik"
 
-"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
+"Slim Scrollbar replaces default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
 
 ATTENTION:
 The extension can't automatically turn off the default scrollbars. To do so, open Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
@@ -24,12 +24,8 @@ Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während de
 Wenn Sie diese Erweiterung übersetzen möchten, können Sie mich per e-mail oder über die Supportseite kontaktieren.
 
 Danke an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
-<<<<<<< HEAD
 Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung.
 Danke an myonno für die deutsche Übersetzung."
-=======
-Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung."
->>>>>>> f644d3f9f7cddb917cc639b2ddaadd590fe5170b
 
 "polish translation" : "polnische Übersetzung"
 "german translation" : "deutsche Übersetzung"

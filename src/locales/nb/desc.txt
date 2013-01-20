@@ -1,8 +1,8 @@
-"Slim Scrollbar" : "Tynne rullefelt"
+﻿"Slim Scrollbar" : "Tynne rullefelt"
 
 "A scrollbar with auto-hide" : "Rullefelt som skjules automatisk"
 
-"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
+"Slim Scrollbar replaces default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
 
 ATTENTION:
 The extension can't automatically turn off the default scrollbars. To do so, open Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
@@ -11,7 +11,12 @@ A well-know issue on oldest computers is performance degredation during scrollin
 
 If you want to translate this extension you can email me or visit support page.
 
-Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support."  : "Tynne rullefelt erstatter standard rullefeltet med to enkle rullefelt som skjules automatisk. Disse er kun synlige mens du ruller. Spesielt nyttig på små skjermer.
+Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
+Thanks to myonno for german translation."
+
+ :
+
+"Tynne rullefelt erstatter standard rullefeltet med to enkle rullefelt som skjules automatisk. Disse er kun synlige mens du ruller. Spesielt nyttig på små skjermer.
 
 MERK:
 Utvidelsen kan ikke automatisk skru av standard rullefeltene. For å gjøre det, gå til Instillinger: Avansert: Nettleser og velg bort "Vis rullefelt."
@@ -20,4 +25,5 @@ Et kjent problem kan oppstå på gamle maskiner med ytelsestap mens man skruller
 
 Om du ønsker å oversette denne utvidelelsen kan du sende meg en epost eller besøke brukerstøttesiden.
 
-Takk til Daniel (https://twitter.com/#!/Aeyoun) for norsk oversettelsen og kodestøtte."
+Takk til Daniel (https://twitter.com/#!/Aeyoun) for norsk oversettelsen og kodestøtte.
+Takk til myonno for den tyske oversettelsen."
