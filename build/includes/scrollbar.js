@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          SlimScrollbar
-// @description	  Slim Scrollbar is an Opera extension that replace default scroll bars with two simple auto-hide bars.
+// @description	  Slim Scrollbar is an Opera extension that replaces default scroll bars with two simple auto-hide bars.
 // @author        Damage92
 // @exclude http://acid3.acidtests.org/
 // @exclude https://docs.google.com/*
@@ -15,7 +15,6 @@ this.margin = margine del limite dello scorrimento
 
 
 (function() {
-
 
 function get_value(par) {return parseInt(par.split("px")[0])}
 
@@ -37,41 +36,30 @@ window.opera.addEventListener('BeforeEventListener.mouseup', prevent_event, fals
 }
 
 function check_init() {
-	if ((prefs.msg != undefined) && (document.body != null)) init();
+	if (document.body != null) init();
 	else init_time = setTimeout(check_init, 500);
 }
 
 
 function Prefs() {
 	//default values
-	this.alt = "false";
-	this.hide = "true";
-	this.size = 5;
-	this.color = "black";
-	this.b_color = "white";
-	this.only_over = "false";
+	this.alt = widget.preferences.alternative ? widget.preferences.alternative : "false";
+	this.hide = widget.preferences.auto_hide ? widget.preferences.auto_hide : "true";
+	this.size = widget.preferences.size ? widget.preferences.size : 5;
+	this.color = widget.preferences.color ? widget.preferences.color : "black";
+	this.b_color = widget.preferences.b_color ? widget.preferences.b_color : "white";
+	this.only_over = widget.preferences.only_over ? widget.preferences.only_over : "false";
 	
 }
 
 function get_msg(event) { //called from the message event handler
-	prefs.msg = event.data;
-
-	if (prefs.msg[0]) prefs.alt = prefs.msg[0];
-	if (prefs.msg[1]) prefs.hide = prefs.msg[1];
-	if (prefs.msg[2]) prefs.size = prefs.msg[2];
-	if (prefs.msg[3]) prefs.color = prefs.msg[3];
-	if (prefs.msg[4]) prefs.only_over = prefs.msg[4];
-	if (prefs.msg[5]) prefs.b_color = prefs.msg[5];
-
 	if (vbar != null) vbar.update_prefs();
 	if (hbar != null) hbar.update_prefs();
-
 }
 
 
 function prevent_event (event) {
 
-if (vbar)
 if ((event.event.target == vbar.bar) || (event.event.target == vbar.udr) || (event.event.target == hbar.bar) || (event.event.target == hbar.udr))
 if ( (event.listener != vbar.hdl_udr_click) && (event.listener != vbar.hdl_down_bar) && (event.listener != vbar.hdl_up_bar) && (event.listener != hbar.hdl_udr_click) && (event.listener != hbar.hdl_down_bar) && (event.listener != hbar.hdl_up_bar) && (event.listener != false_func) )
 			event.preventDefault();
@@ -82,7 +70,7 @@ function false_func() { return false; }
 
 function Cover() {
 	this.cov = document.createElement("div");
-	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px;opacity:0";
+	this.cov.style = "visibility:visible;position:absolute;top:0px;left:0px;opacity:0;";
 	this.cov.style.zIndex = max_zindex - 2;
 	this.ins = false;
 	this.orig_func;
@@ -167,6 +155,7 @@ function V_bar() {
 	}
 
 	this.update_prefs = function() {
+		prefs = new Prefs();
 		this.bar.style.borderColor = prefs.b_color;
 		this.bar.style.backgroundColor = prefs.color;		
 		prefs.alt == "true" ? this.with_alt() : this.without_alt();
@@ -492,6 +481,7 @@ function H_bar() {
 	}
 
 	this.update_prefs = function() {
+		prefs = new Prefs();
 		this.bar.style.borderColor = prefs.b_color;
 		this.bar.style.backgroundColor = prefs.color;		
 		prefs.alt == "true" ? this.with_alt() : this.without_alt();

@@ -1,8 +1,8 @@
-"Slim Scrollbar." : "Wąski pasek przewijania"
+﻿"Slim Scrollbar." : "Wąski pasek przewijania"
 
 "A scrollbar with auto-hide" : "Samoukrywający się pasek przewijania"
 
-"Slim Scrollbar replace default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
+"Slim Scrollbar replaces default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful especially for small screens.
 
 ATTENTION:
 The extension can't automatically turn off the default scrollbars. To do so, open Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
@@ -17,12 +17,15 @@ Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation." 
 UWAGA:
 Rozszerzenie nie może samo wyłączyć domyślnych pasków. Aby to zrobić, wybierz z menu Ustawienia ▹ Zaawansowane ▹ Przeglądanie i odznacz pole „Pokaż paski przewijania”
 
+Nie mam już czasu na rozwijanie rozszerzenia, więc nie mam pojęcia ile uaktualnień jeszcze wydam. Możecie jednak obadać narzędzie, którym czynnie zajmuje się Christoph142: Modern Scroll.
+
 Często na starych komputerach wydajność podczas przewijania spada. Możesz wypróbować opcję „Napraw wolne przewijanie”, jednak czasem sprawia ona, że pasek migocze.
 
 Jeśli chcesz przełożyć to rozszerzenie na swój język, wyślij mi mejla albo wpisz się na stronie pomocy.
 
 Dziękuję Danielowi (https://twitter.com/#!/Aeyoun) za przełożenie na norweszczyznę (bokmål) i pomoc z kodem.
-Dziękuję Piotrowi Wójcikowi (http://my.opera.com/chocimir) za przekład na polszczyznę."
+Dziękuję Piotrowi Wójcikowi (http://my.opera.com/chocimir) za przekład na polszczyznę.
+Dziękuję myonno za niemiecki przekład."
 
 "polish translation" : "polskie tłumaczenie"
 "fixed octopress incompatibility" : "rozwiązano konflikt z octopress"

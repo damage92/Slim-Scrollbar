@@ -1,0 +1,38 @@
+﻿"Slim Scrollbar." : "Slim Scrollbar"
+
+"A scrollbar with auto-hide" : "Otomatik gizlenen kaydırma çubuğu"
+
+"Slim Scrollbar replaces default scroll bars with two simple auto-hide bars. These bars are visible only when you scroll the page. So you obtain more space, useful 
+
+especially for small screens.
+
+ATTENTION:
+The extension can't automatically turn off the default scrollbars. To do so, open Preferences ▹ Advanced ▹ browsing, and deactivate "show scroll bars".
+
+A well-know issue on oldest computers is performance degredation during scrolling. You can try to activate "solve slow scrolling" options, but this may result in the 
+
+scrollbars flickering.
+
+If you want to translate this extension you can email me or visit support page.
+
+Thanks to Daniel (https://twitter.com/#!/Aeyoun) for the Norwegian bokmål translation and code support.
+Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation.
+Thanks to myonno for german translation."  : 
+
+"DİKKAT:
+Bu eklenti varsayılan kaydırma çubuğunu kapatamamaktadır. Bunu yapmak için, Tercihler ▹ Gelişmiş ▹ Tarama bölümüne gidin ve "Kaydırma çubuklarını göster" ayarını kapatın.
+
+Eski bilgisayarlar da bilinen bir sorun, kaydırma yaparken yavaşlama olmasıdır. Bunu çözmek için "Yavaş kaydırma sorununu çöz" ayarını açabilirsiniz, ancak bu kaydırma çubuğunda kırpışmaya sebep olabilir.
+
+Eğer bu eklentiyi çevirmek isterseniz, bana e-posta gönderebilir veya destek sayfasını ziyaret edebilirsiniz.
+
+
+Norveçce çevirisi ve kod desteği için teşekkürler Daniel (https://twitter.com/#!/Aeyoun).
+Polonyaca çiviri için teşekkürler Piotr Wójcik (http://my.opera.com/chocimir).
+Almanca çeviri için teşekkürler myonno.
+Türkçe çiviri için teşekkürler Güray sun." 
+
+
+"german translation" : "almanca çeviri"
+
+"turkish translation" : "türkçe çeviri"

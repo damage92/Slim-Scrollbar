@@ -17,6 +17,8 @@ Thanks to Piotr Wójcik (http://my.opera.com/chocimir) for polish translation." 
 UWAGA:
 Rozszerzenie nie może samo wyłączyć domyślnych pasków. Aby to zrobić, wybierz z menu Ustawienia ▹ Zaawansowane ▹ Przeglądanie i odznacz pole „Pokaż paski przewijania”
 
+Nie mam już czasu na rozwijanie rozszerzenia, więc nie mam pojęcia ile uaktualnień jeszcze wydam. Możecie jednak obadać narzędzie, którym czynnie zajmuje się Christoph142: Modern Scroll.
+
 Często na starych komputerach wydajność podczas przewijania spada. Możesz wypróbować opcję „Napraw wolne przewijanie”, jednak czasem sprawia ona, że pasek migocze.
 
 Jeśli chcesz przełożyć to rozszerzenie na swój język, wyślij mi mejla albo wpisz się na stronie pomocy.

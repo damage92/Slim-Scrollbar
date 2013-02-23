@@ -10,7 +10,7 @@ var strings = {
 	"use this option if you are experiencing slow scrolling" : "Benutze diese Option bei langsamem Scrollen",
 	"Auto hide" : "Automatisches Ausblenden",
 	"auto hide the scrollbars after a few seconds" : "Bildlaufleisten nach ein paar Sekunden ausblenden",
-	"View bar only when mouse is over it" : "Zeige die Bildlaufleisten nur wenn die Maus darüber ist",
+	"Show bar only when mouse is over it" : "Zeige die Bildlaufleisten nur wenn die Maus darüber ist",
 	"version" : "Version",
 	"default value": "Standardwert",
 	"General options:" : "Grundeinstellungen",

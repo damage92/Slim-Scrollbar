@@ -1,8 +1,1 @@
-function _(original) {
-
-	if (strings[original] != undefined )
-		return strings[original]
-	else
-		return original;
-
-}
+function _(original){ return strings[original] ? strings[original] : original; }

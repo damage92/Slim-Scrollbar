@@ -10,6 +10,8 @@
 	<description xml:lang="nb">Rullefelt som skjules automatisk.</description>
 	<description xml:lang="pl">Samoukrywający się pasek przewijania.</description>	
 	<description xml:lang="de">Eine Bildlaufleiste mit Ausblend-Automatik.</description>	
+	<description xml:lang="tr">Otomatik gizlenen kaydırma çubuğu.</description>	
+
 
 	<preference name="alternative" value="false" />
 	<preference name="auto_hide" value="true" />

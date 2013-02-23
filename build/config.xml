@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.9-3">
+<widget xmlns="http://www.w3.org/ns/widgets" defaultlocale="en" version="0.9-4">
 
 	<name xml:lang="en">Slim Scrollbar</name>
 	<name xml:lang="nb">Tynne rullefelt</name>

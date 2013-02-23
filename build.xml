@@ -2,7 +2,7 @@
 <project name="Slimscrollbar" default="build">
 
 	<!-- properties and fileset -->
-	<property name="ver_num" value="0.9-3"/>
+	<property name="ver_num" value="0.9-5"/>
 	<property name="ext_name" value="slimscrollbar"/>
 	<fileset id="propdeps" dir="src/" casesensitive="yes">
 		<!-- files to overwrite also if not newer because contains a property maybe to refresh -->

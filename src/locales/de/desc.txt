@@ -19,9 +19,9 @@ Slim Scrollbar ersetzt die Standard-Bildlaufleisten durch zwei einfache Leisten,
 ACHTUNG:
 Diese Erweiterung kann die Standard-Bildlaufleisten nicht deaktivieren. Um sie auszuschalten, gehen Sie zu Einstellungen ▹ Erweitert ▹ Browser und deaktivieren dort "Bildlaufleisten zeigen". 
 
-Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während dem Scrollen. Sie können versuchen, dies zu verbessern, indem Sie die Option "Langsames Scrollen korrigieren" aktivieren, jedoch kann es dann zum Flimmern der Bildlaufleisten kommen.
+Ich habe keine Zeit mehr, diese Erweiterung aktiv weiter zu entwickeln. Daher weiß ich nicht, wie viele Updates ich in Zukunft anbieten kann. Es gibt aber eine andere Erweiterung, die aktiv gepflegt wird. Probieren Sie diese aus. Sie heißt Modern Scroll und ist von Christoph142.
 
-Wenn Sie diese Erweiterung übersetzen möchten, können Sie mich per e-mail oder über die Supportseite kontaktieren.
+Ein bekanntes Problem auf älteren Computern ist der Leistungsabfall während dem Scrollen. Sie können versuchen, dies zu verbessern, indem Sie die Option "Langsames Scrollen korrigieren" aktivieren, jedoch kann es dann zum Flimmern der Bildlaufleisten kommen.
 
 Danke an Daniel (https://twitter.com/#!/Aeyoun) für die norwegische Übersetzung und der Unterstützung beim Code.
 Danke an Piotr Wójcik (http://my.opera.com/chocimir) für die polnische Übersetzung.
